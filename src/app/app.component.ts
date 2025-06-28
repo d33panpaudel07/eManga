@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {document} from "postcss";
 
 @Component({
   selector: 'app-root',
