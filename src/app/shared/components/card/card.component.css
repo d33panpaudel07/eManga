@@ -1,0 +1,10 @@
+.rank-text {
+  -webkit-text-stroke: 2px var(--button-primary-bg);
+  color: transparent;
+  transition: color 0.3s ease, -webkit-text-stroke 0.3s ease;
+}
+
+.rank-text:hover {
+  -webkit-text-stroke: 0px; /* Remove outline */
+  color: var(--button-primary-bg); /* Fill with the same color */
+}

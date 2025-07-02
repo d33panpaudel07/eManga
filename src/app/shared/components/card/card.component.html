@@ -1,0 +1,16 @@
+<div
+  class="relative m-4 box-border rounded-lg
+  hover:border-[var(--button-primary-bg)] transition-border-color duration-300 ease-out hover:border-8
+  hover:bg-gradient-to-r
+  ">
+  <div [ngStyle]="{'background-image': 'url(' + backgroundImage + ')'}"
+       [ngClass]="[getHeight, getWidth]"
+       class="bg-center bg-cover">
+  </div>
+
+  <div
+    class="absolute bottom-3 left-3 text-9xl text-button-primary-bg font-bold"
+  >
+    <p>{{ rank }}</p>
+  </div>
+</div>
