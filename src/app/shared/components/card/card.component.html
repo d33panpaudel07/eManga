@@ -1,16 +1,25 @@
 <div
-  class="relative m-4 box-border rounded-lg
-  hover:border-[var(--button-primary-bg)] transition-border-color duration-300 ease-out hover:border-8
-  hover:bg-gradient-to-r
-  ">
+  class="relative box-border rounded-lg
+    border-4 border-transparent
+    hover:border-[var(--button-primary-bg)]
+    transition-transform transition-colors duration-300 ease-out
+    hover:scale-105
+    hover:bg-gradient-to-r hover:cursor-pointer
+    w-2/12 overflow-hidden
+    group
+    transform-gpu
+    rounded-2xl
+  "
+>
   <div [ngStyle]="{'background-image': 'url(' + backgroundImage + ')'}"
-       [ngClass]="[getHeight, getWidth]"
-       class="bg-center bg-cover">
+       class="w-full h-60 bg-center bg-cover">
   </div>
 
   <div
     class="absolute bottom-3 left-3 text-9xl text-button-primary-bg font-bold"
   >
-    <p>{{ rank }}</p>
+    <p class="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+      {{ rank }}
+    </p>
   </div>
 </div>

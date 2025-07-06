@@ -1,6 +1,17 @@
 <!--<p>home works!</p>-->
-<div class="w-2/12">
-  <app-card [height]="'x-large'" [width]="'full'"
-            [backgroundImage]="'https://media.istockphoto.com/id/1084651510/vector/card-trick-flat-design-april-fools-day-icon.jpg?s=612x612&w=0&k=20&c=jJGbuDbxAAzTPTX8OjVBhTJ8KpXE1FJhIBpE1Mm9cCk='"
-  ></app-card>
+<div class="w-full h-dvh">
+  <div>
+    <app-carousel-card [backgroundUrl]="'https://w.wallhaven.cc/full/57/wallhaven-571998.png'"
+                       [logoUrl]="'https://1000logos.net/wp-content/uploads/2021/08/Cyberpunk-2077-Logo.png'"
+                       [description]="'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.'"
+                       [genres]="['Cry','Once','And','Again']"
+                       [year]="'2025'"
+    ></app-carousel-card>
+  </div>
+  <div class="p-5">
+    <app-card
+      rank="7"
+      [backgroundImage]="'https://w.wallhaven.cc/full/1q/wallhaven-1q3xp1.jpg'"
+    ></app-card>
+  </div>
 </div>
