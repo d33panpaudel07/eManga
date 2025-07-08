@@ -1,1 +1,37 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base theme variables */
+:root {
+  --bg-main: #0B0C17;
+  --bg-container: #1B1D2B;
+
+  --text-primary: #FFFFFF;
+  --text-secondary: #B0B0B0;
+  --text-muted: #777D8E;
+
+  --button-primary-bg: #6358FF;
+  --button-primary-hover: #7F74FF;
+
+  --badge-rating-bg: #F5C518;
+
+  --highlight-glow: #7488FF;
+
+  --icon-color: #3E3F4D;
+  --overlay-black: rgba(0, 0, 0, 0.4);
+
+  /*--color-primary: #1d4ed8;     !* blue-700 *!*/
+  /*--color-secondary: #9333ea;   !* purple-600 *!*/
+  /*--color-background: #ffffff;*/
+  /*--color-text: #000000;*/
+}
+
+/* Dark theme */
+.dark-theme {
+  --color-primary: #6272ff;
+  --color-secondary: #c084fc;
+  --color-background: #1e1e1e;
+  --color-text: #ffffff;
+}

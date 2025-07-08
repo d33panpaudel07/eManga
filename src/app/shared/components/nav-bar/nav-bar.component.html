@@ -1,0 +1,58 @@
+
+<nav class="navbar flex items-center justify-between bg-bg-container text-white px-52 py-4 shadow-md flex-wrap gap-4 ">
+  <div class="logo text-2xl font-bold text-white">
+    <span class="">eManga</span>
+  </div>
+
+  <ul class="flex gap-10 items-center justify-center bg-gray-700 rounded-md py-2 px-4">
+    <li>
+      <a routerLink="/" routerLinkActive="text-blue-400 font-semibold">
+        <button class="flex items-center gap-1 bg-button-primary-hover text-text-primary px-4 py-2 rounded-md">
+          <span class="material-icons">home</span> Home
+        </button>
+      </a>
+    </li>
+    <li>
+      <a routerLink="/movies" class="flex items-center gap-2">
+        <button class="flex items-center gap-1">
+          <span class="material-icons">movie</span> Movies
+        </button>
+      </a>
+    </li>
+    <li>
+      <a routerLink="/tv-shows" class="flex items-center gap-2">
+        <button class="flex items-center gap-1">
+          <span class="material-icons">tv</span> TV Shows
+        </button>
+      </a>
+    </li>
+    <li>
+      <button class="flex items-center gap-1">
+        <a routerLink="/collections" class="flex items-center gap-2">
+          <span class="material-icons">collections</span> Collections
+        </a>
+      </button>
+    </li>
+    <li>
+      <button class="flex items-center gap-1">
+        <a routerLink="/parties" class="flex items-center gap-2">
+          <span class="material-icons">party_mode</span> Parties
+        </a>
+      </button>
+    </li>
+  </ul>
+
+  <div class="search-bar flex items-center gap-3 ">
+    <button class="bg-bg-main py-3 px-10 rounded-md flex items-center gap-2 border border-gray-500">
+      <span class="material-icons">search</span>Search
+    </button>
+  </div>
+
+  <div class="actions flex gap-7">
+    <button class="register bg-bg-main p-3 rounded-md text-button-primary-bg font-bold px-5">Register</button>
+    <button
+      class="sign-in flex items-center gap-2 bg-button-primary-bg p-3 rounded-md text-text-primary font-bold px-5"><span
+      class="material-icons">input</span>Sign In
+    </button>
+  </div>
+</nav>

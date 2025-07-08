@@ -1,0 +1,108 @@
+
+/*!* Navbar Base Styles *!*/
+/*.navbar {*/
+/*  display: flex;*/
+/*  justify-content: space-between; !* Space between logo, nav links, and actions *!*/
+/*  align-items: center; !* Vertically center all elements *!*/
+/*  background-color: #1f1c2d; !* Dark background *!*/
+/*  padding: 10px 20px;*/
+/*  color: white;*/
+/*}*/
+
+/*!* Logo *!*/
+/*.logo {*/
+/*  font-size: 18px;*/
+/*  font-weight: bold;*/
+/*}*/
+
+/*!* Navigation Links *!*/
+/*.nav-links {*/
+/*  display: flex;*/
+/*  gap: 20px; !* Spacing between links *!*/
+/*  list-style: none;*/
+/*}*/
+
+/*.nav-links li a {*/
+/*  text-decoration: none;*/
+/*  color: white;*/
+/*  font-size: 16px;*/
+/*  padding: 10px 15px;*/
+/*  border-radius: 5px;*/
+/*  transition: background-color 0.3s ease;*/
+/*}*/
+
+/*.nav-links li a:hover,*/
+/*.nav-links li a.active {*/
+/*  background-color: #3b82f6; !* Active link background *!*/
+/*  color: white;*/
+/*}*/
+
+/*!* Material Icons *!*/
+/*.material-icons {*/
+/*  font-family: 'Material Icons';*/
+/*  font-size: 18px;*/
+/*  vertical-align: middle;*/
+/*  margin-right: 5px;*/
+/*}*/
+
+/*!* Search Bar *!*/
+/*.search-bar {*/
+/*  display: flex;*/
+/*  align-items: center;*/
+/*  gap: 10px;*/
+/*}*/
+
+/*.search-bar input {*/
+/*  padding: 5px 10px;*/
+/*  border: none;*/
+/*  border-radius: 5px;*/
+/*  background-color: #2d2d2d;*/
+/*  color: white;*/
+/*}*/
+
+/*.search-bar button {*/
+/*  background-color: transparent;*/
+/*  border: none;*/
+/*  cursor: pointer;*/
+/*}*/
+
+/*!* Action Buttons *!*/
+/*.actions {*/
+/*  display: flex;*/
+/*  gap: 10px;*/
+/*}*/
+
+/*.actions button {*/
+/*  padding: 10px 15px;*/
+/*  border: none;*/
+/*  border-radius: 5px;*/
+/*  cursor: pointer;*/
+/*  transition: background-color 0.3s ease;*/
+/*}*/
+
+/*.register {*/
+/*  background-color: #3b82f6;*/
+/*  color: white;*/
+/*}*/
+
+/*.sign-in {*/
+/*  background-color: #9333ea;*/
+/*  color: white;*/
+/*}*/
+
+/*!* Responsive Design *!*/
+/*@media (max-width: 768px) {*/
+/*  .nav-links {*/
+/*    display: none; !* Hide nav links on small screens *!*/
+/*  }*/
+
+/*  .search-bar {*/
+/*    display: none; !* Hide search bar on small screens *!*/
+/*  }*/
+
+/*  .actions {*/
+/*    display: none; !* Hide action buttons on small screens *!*/
+/*  }*/
+/*}*/
+
+
