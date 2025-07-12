@@ -1,5 +1,6 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {CommonModule} from '@angular/common';
+import {CardDto} from "../../models/card.model";
 
 @Component({
   selector: 'app-card',
@@ -14,4 +15,10 @@ export class CardComponent {
   @Input() backgroundImage: string = '';
   @Input() description: string = '';
   @Input() title: string = '';
+
+  ngOnInit(): void {
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+  }
 }

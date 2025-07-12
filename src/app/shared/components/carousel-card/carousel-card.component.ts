@@ -1,5 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {CommonModule, NgOptimizedImage} from '@angular/common';
+import {CarouselCardDto} from "../../models/card.model";
 
 @Component({
   selector: 'app-carousel-card',
@@ -8,7 +9,7 @@ import {CommonModule, NgOptimizedImage} from '@angular/common';
   templateUrl: './carousel-card.component.html',
   styleUrls: ['./carousel-card.component.css']
 })
-export class CarouselCardComponent implements OnInit {
+export class CarouselCardComponent implements OnInit,OnChanges {
   @Input() backgroundUrl!: string;
   @Input() logoUrl!: string;
   @Input() year: string = '2025';
@@ -19,6 +20,9 @@ export class CarouselCardComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log('CarouselCardComponent - Inputs changed:', changes);
   }
 }

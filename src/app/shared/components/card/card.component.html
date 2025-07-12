@@ -1,25 +1,24 @@
 <div
   class="relative box-border rounded-lg
     border-4 border-transparent
-    hover:border-[var(--button-primary-bg)]
-    transition-transform transition-colors duration-300 ease-out
-    hover:scale-105
-    hover:bg-gradient-to-r hover:cursor-pointer
-    w-2/12 overflow-hidden
+    h-96 w-80
     group
     transform-gpu
-    rounded-2xl
+    hover:border-[var(--button-primary-bg)]
+    hover:scale-105
+    hover:bg-gradient-to-r hover:cursor-pointer
+    transition-transform duration-300 ease-out
   "
 >
-  <div [ngStyle]="{'background-image': 'url(' + backgroundImage + ')'}"
+  <div [ngStyle]="{'background-image': 'url(' + cardDto.backgroundImage + ')'}"
        class="w-full h-60 bg-center bg-cover">
   </div>
 
-  <div
-    class="absolute bottom-3 left-3 text-9xl text-button-primary-bg font-bold"
+  <div *ngIf="cardDto.rank != undefined || cardDto.rank != null"
+    class="absolute bottom-3 left-3 text-8xl text-button-primary-bg font-bold"
   >
     <p class="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-      {{ rank }}
+      {{ cardDto.rank }}
     </p>
   </div>
 </div>
