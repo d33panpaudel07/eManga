@@ -1,4 +1,5 @@
-<nav class="navbar flex items-center justify-between bg-bg-container text-white px-52 py-4 shadow-md flex-wrap gap-4">
+<nav
+  class="navbar flex items-center justify-between bg-background-container text-white px-52 py-4 shadow-md flex-wrap gap-4">
   <div class="logo text-2xl font-bold text-white">
     <span>eManga</span>
   </div>
@@ -6,16 +7,16 @@
   <ul class="flex gap-10 items-center justify-center bg-gray-700 rounded-md py-2 px-4">
     <!-- Home Button -->
     <li>
-      <a routerLink="/" routerLinkActive="text-blue-400 font-semibold">
-        <button class="flex items-center gap-1 bg-button-primary-hover text-text-primary px-4 py-2 rounded-md">
-          <span class="material-icons">home</span> Home
-        </button>
+      <a routerLink="/home" routerLinkActive="bg-button-primary-hover text-text-primary font-semibold"
+         [ngClass]="getNavButtonClass(router.isActive('/home', true))" class="flex items-center gap-1">
+        <span class="material-icons">home</span> Home
       </a>
     </li>
 
     <!-- Browse Button -->
     <li>
-      <a routerLink="/browse" class="flex items-center gap-2">
+      <a routerLink="/browse" routerLinkActive="bg-button-primary-hover text-text-primary font-semibold"
+         [ngClass]="getNavButtonClass(router.isActive('/browse', true))" class="flex items-center gap-1">
         <button class="flex items-center gap-1">
           <span class="material-icons">travel_explore</span> Browse
         </button>
@@ -30,8 +31,13 @@
   </div>
 
   <div class="actions flex gap-7">
-    <button class="flex items-center p-3 px-5 bg-bg-main rounded-md text-button-primary-bg font-bold ">Register</button>
-    <button class="flex items-center p-3 px-5 gap-2 bg-button-primary-bg rounded-md text-text-primary font-bold ">
+    <button class="flex items-center p-3 px-5 bg-bg-container rounded-lg text-button-primary-bg font-bold
+                    hover:bg-button-primary-bg hover:text-text-primary hover:scale-95 transition duration-200 ease-in-out"
+    (click)="handleRegister()">Register
+    </button>
+    <button class="flex items-center p-3 px-5 gap-2 bg-button-primary-bg rounded-md text-text-primary font-bold
+                    hover:bg-bg-container hover:text-button-primary-bg hover:scale-95 transition duration-200 ease-in-out"
+                    (click)="handleLogin()">
       <span class="material-icons">input</span> Sign In
     </button>
   </div>
