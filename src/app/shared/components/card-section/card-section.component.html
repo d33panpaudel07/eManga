@@ -9,15 +9,30 @@
 <!--  </div>-->
 <!--</div>-->
 
-<div class="box-border pt-10 pl-5">
-  <h1 class="text-button-primary-bg text-5xl font-bold">Top Ranked</h1>
+<!-- WHOLE SECTION WRAPPER -->
+<div class="relative w-full">
+
+  <!-- SECTION HEADING -->
+  <div class="box-border pl-5">
+    <h1 class="text-button-primary-bg text-5xl font-bold">{{sectionTitle}}</h1>
+  </div>
+
+  <!-- SECTION CARDS -->
+  <div class="hide-scrollbar w-full flex gap-4 pb-10 pt-5 px-5 box-border">
+    <div *ngFor="let data of sectionContent" class="w-max">
+      <app-card [title]="data.title" [description]="data.description" [backgroundImage]="data.backgroundImage" [rank]="data.rank"></app-card>
+    </div>
+  </div>
+
+  <!-- Fading gradient overlay on right -->
+  <div class="pointer-events-none absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l dark:from-black to-transparent opacity-80"></div>
+
+  <!-- SECTION ARROWS -->
+  <div class="absolute right-10 top-1/2 transform translate-y-1/2 opacity-0 hover:opacity-100 transition-opacity duration-100">
+    <button class="flex items-center p-3 px-5 gap-2 bg-button-primary-bg rounded-md text-text-primary font-bold">
+      <span class="material-icons">arrow_right_alt</span> Next
+    </button>
+  </div>
+
 </div>
 
-<div class="w-full py-10 px-5 box-border overflow-x-auto">
-  <div class="flex gap-4 w-max">
-    <app-card
-      *ngFor="let rankCard of rankingCards"
-      [cardDto]="rankCard"
-    ></app-card>
-  </div>
-</div>

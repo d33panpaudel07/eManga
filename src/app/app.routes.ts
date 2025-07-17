@@ -11,7 +11,19 @@ export const appRoutes: Routes = [
     loadComponent: () => import('./layouts/main-layout/main-layout.component').then(m => m.MainLayoutComponent),
     children: [
       {path: 'home', loadComponent: () => import('./features/home/home.component').then(m => m.HomeComponent)},
-      {path: 'browse', loadComponent: () => import('./features/about/about.component').then(m => m.AboutComponent)},
+      {path: 'browse', loadComponent: () => import('./features/browse/browse.component').then(m => m.BrowseComponent)},
     ]
+  },
+  {
+    path: 'register',
+    loadComponent: () => import('./layouts/auth-layout/auth-layout.component').then(m => m.AuthLayoutComponent),
+  },
+  {
+    path: 'login',
+    loadComponent: () => import('./layouts/auth-layout/auth-layout.component').then(m => m.AuthLayoutComponent)
+  },
+  {
+    path: '**',
+    redirectTo: 'home',
   }
 ];

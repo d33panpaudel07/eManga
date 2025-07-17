@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {RouterLink, RouterLinkActive} from "@angular/router";
+import {Router, RouterLink, RouterLinkActive} from "@angular/router";
 
 @Component({
   selector: 'app-nav-bar',
@@ -11,4 +11,20 @@ import {RouterLink, RouterLinkActive} from "@angular/router";
 })
 export class NavBarComponent {
 
+  constructor(public router: Router) {}
+
+  getNavButtonClass(isActive: boolean): string {
+    const baseClass = 'flex items-center gap-1 px-4 py-2 rounded-md transition-all duration-300 ease-in-out';
+    const activeClass = 'bg-button-primary-hover text-text-primary font-semibold';
+    const hoverClass = 'hover:bg-button-primary-bg hover:text-white';
+
+    return `${baseClass} ${isActive ? activeClass : ''} ${hoverClass}`;
+  }
+
+  handleRegister(){
+    this.router.navigate(['/register']).then(r => console.log('Navigation to register successful'));
+  }
+  handleLogin(){
+    this.router.navigate(['/login']).then(r => console.log('Navigation to login successful'));
+  }
 }

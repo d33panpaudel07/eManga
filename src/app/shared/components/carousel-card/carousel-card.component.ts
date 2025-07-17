@@ -1,6 +1,5 @@
 import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {CommonModule, NgOptimizedImage} from '@angular/common';
-import {CarouselCardDto} from "../../models/card.model";
 
 @Component({
   selector: 'app-carousel-card',
