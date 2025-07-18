@@ -13,4 +13,5 @@ import {NavBarComponent} from "../../shared/components/nav-bar/nav-bar.component
 })
 export class MainLayoutComponent {
 
+
 }

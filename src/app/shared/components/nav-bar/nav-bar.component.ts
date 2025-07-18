@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {Router, RouterLink, RouterLinkActive} from "@angular/router";
+import {SidebarService} from "../../services/sidebar.service";
 
 @Component({
   selector: 'app-nav-bar',
@@ -10,8 +11,10 @@ import {Router, RouterLink, RouterLinkActive} from "@angular/router";
   styleUrls: ['./nav-bar.component.css']
 })
 export class NavBarComponent {
+  isLogin = false;
+  isRegister = false;
 
-  constructor(public router: Router) {}
+  constructor(public router: Router, protected sidebarService:SidebarService) {}
 
   getNavButtonClass(isActive: boolean): string {
     const baseClass = 'flex items-center gap-1 px-4 py-2 rounded-md transition-all duration-300 ease-in-out';

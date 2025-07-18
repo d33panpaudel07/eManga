@@ -1,5 +1,17 @@
 <nav
-  class="navbar flex items-center justify-between bg-background-container text-white px-52 py-4 shadow-md flex-wrap gap-4">
+  class="navbar relative flex items-center justify-between bg-background-container text-white px-52 py-4 shadow-md flex-wrap gap-4">
+  <!--  Options -->
+  <div class="flex items-center gap-3
+              absolute left-20 top-1/2 -translate-y-1/2
+              text-xl">
+    <button (click)="sidebarService.toggleSidebar()">
+    <span class="material-symbols-outlined">
+      dehaze
+    </span>
+    </button>
+  </div>
+
+  <!--  LOGO -->
   <div class="logo text-2xl font-bold text-white">
     <span>eManga</span>
   </div>
@@ -33,11 +45,11 @@
   <div class="actions flex gap-7">
     <button class="flex items-center p-3 px-5 bg-bg-container rounded-lg text-button-primary-bg font-bold
                     hover:bg-button-primary-bg hover:text-text-primary hover:scale-95 transition duration-200 ease-in-out"
-    (click)="handleRegister()">Register
+            (click)="handleRegister()">Register
     </button>
     <button class="flex items-center p-3 px-5 gap-2 bg-button-primary-bg rounded-md text-text-primary font-bold
                     hover:bg-bg-container hover:text-button-primary-bg hover:scale-95 transition duration-200 ease-in-out"
-                    (click)="handleLogin()">
+            (click)="handleLogin()">
       <span class="material-icons">input</span> Sign In
     </button>
   </div>
