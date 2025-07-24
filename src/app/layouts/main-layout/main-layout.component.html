@@ -1,17 +1,16 @@
-<div class="h-auto w-full flex flex-col min-h-screen">
+<div class="h-screen w-full flex flex-col">
   <app-nav-bar></app-nav-bar>
 
-  <div class="flex">
+  <div class="flex overflow-hidden">
+    <!-- Sidebar: fixed -->
     <app-side-bar [isSidebarOpen]="isSidebarOpen"></app-side-bar>
 
-    <div
-      [class.flex-1]="isSidebarOpen"
-      [class.w-full]="!isSidebarOpen"
-      class="overflow-auto"
-    >
-      <router-outlet></router-outlet>
+    <!-- Main content area: scrollable, includes router outlet + footer -->
+    <div class="flex flex-col flex-1 overflow-y-auto">
+      <div class="flex-1">
+        <router-outlet></router-outlet>
+      </div>
+      <app-footer></app-footer>
     </div>
   </div>
-
-  <app-footer></app-footer>
 </div>
