@@ -1,7 +1,18 @@
-<!--<p>main-layout works!</p>-->
-
-<div class="h-auto w-full">
+<div class="h-auto w-full flex flex-col min-h-screen">
   <app-nav-bar></app-nav-bar>
-  <router-outlet></router-outlet>
+
+  <div class="flex flex-1">
+<!--    <app-side-bar *ngIf="isSidebarOpen" class="transition-all duration-100 ease-in-out"></app-side-bar>-->
+    <app-side-bar
+      class="transition-all duration-200 ease-in-out"
+      [class.w-64]="isSidebarOpen"
+      [class.w-0]="!isSidebarOpen"
+    ></app-side-bar>
+
+    <div [class.flex-1]="isSidebarOpen" [class.w-full]="!isSidebarOpen" class="overflow-auto">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+
   <app-footer></app-footer>
 </div>
