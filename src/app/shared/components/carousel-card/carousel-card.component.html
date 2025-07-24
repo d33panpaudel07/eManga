@@ -5,7 +5,7 @@
   <div
     class="absolute inset-0 bg-gradient-to-r from-black to-transparent opacity-80"
   ></div>
-  <div class="w-full p-20">
+  <div class="w-full p-10">
     <div class="relative z-1">
       <div>
         <img [src]="logoUrl" alt="Logo here" class="w-[300px] mb-4" />
@@ -16,8 +16,10 @@
           Watch Now
         </button>
       </div>
-      <div class="absolute right-0 -bottom-20 max-w-2xl">
-        <p class="text-l text-right text leading-relaxed text-gray-200">
+      <div class="absolute right-0 -bottom-20 max-w-md">
+        <p
+          class="text-l text-right text leading-relaxed text-gray-200 line-clamp-5"
+        >
           {{ description }}
         </p>
         <div class="flex justify-end py-5 gap-2 text-gray-400 text-sm">

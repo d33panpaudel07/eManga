@@ -7,6 +7,7 @@ import {
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { faker } from '@faker-js/faker';
+import { ɵEmptyOutletComponent } from "@angular/router";
 
 type menuType = {
   icon: string;
@@ -17,7 +18,7 @@ type menuType = {
 @Component({
   selector: 'app-side-bar',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ɵEmptyOutletComponent],
   templateUrl: './side-bar.component.html',
   styleUrls: ['./side-bar.component.css'],
 })
