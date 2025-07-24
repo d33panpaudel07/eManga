@@ -1,7 +1,17 @@
-<!--<p>main-layout works!</p>-->
-
-<div class="h-auto w-full">
+<div class="h-auto w-full flex flex-col min-h-screen">
   <app-nav-bar></app-nav-bar>
-  <router-outlet></router-outlet>
+
+  <div class="flex">
+    <app-side-bar [isSidebarOpen]="isSidebarOpen"></app-side-bar>
+
+    <div
+      [class.flex-1]="isSidebarOpen"
+      [class.w-full]="!isSidebarOpen"
+      class="overflow-auto"
+    >
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+
   <app-footer></app-footer>
 </div>

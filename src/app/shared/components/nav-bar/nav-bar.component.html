@@ -1,22 +1,43 @@
 <nav
-  class="navbar flex items-center justify-between bg-background-container text-white px-52 py-4 shadow-md flex-wrap gap-4">
+  class="navbar relative flex items-center justify-between bg-background-container text-white px-52 py-4 shadow-md flex-wrap gap-4"
+>
+  <!--  Options -->
+  <div
+    class="flex items-center gap-3 absolute left-20 top-1/2 -translate-y-1/2 text-xl"
+  >
+    <button (click)="sidebarService.toggleSidebar()">
+      <span class="material-symbols-outlined text-4xl"> dehaze </span>
+    </button>
+  </div>
+
+  <!--  LOGO -->
   <div class="logo text-2xl font-bold text-white">
     <span>eManga</span>
   </div>
 
-  <ul class="flex gap-10 items-center justify-center bg-gray-700 rounded-md py-2 px-4">
+  <ul
+    class="flex gap-10 items-center justify-center bg-gray-700 rounded-md py-2 px-4"
+  >
     <!-- Home Button -->
     <li>
-      <a routerLink="/home" routerLinkActive="bg-button-primary-hover text-text-primary font-semibold"
-         [ngClass]="getNavButtonClass(router.isActive('/home', true))" class="flex items-center gap-1">
+      <a
+        routerLink="/home"
+        routerLinkActive="bg-button-primary-hover text-text-primary font-semibold"
+        [ngClass]="getNavButtonClass(router.isActive('/home', true))"
+        class="flex items-center gap-1"
+      >
         <span class="material-icons">home</span> Home
       </a>
     </li>
 
     <!-- Browse Button -->
     <li>
-      <a routerLink="/browse" routerLinkActive="bg-button-primary-hover text-text-primary font-semibold"
-         [ngClass]="getNavButtonClass(router.isActive('/browse', true))" class="flex items-center gap-1">
+      <a
+        routerLink="/browse"
+        routerLinkActive="bg-button-primary-hover text-text-primary font-semibold"
+        [ngClass]="getNavButtonClass(router.isActive('/browse', true))"
+        class="flex items-center gap-1"
+      >
         <button class="flex items-center gap-1">
           <span class="material-icons">travel_explore</span> Browse
         </button>
@@ -25,19 +46,24 @@
   </ul>
 
   <div class="search-bar flex items-center gap-3">
-    <button class="bg-bg-main py-3 px-10 rounded-md flex items-center gap-2 border border-gray-500">
+    <button
+      class="bg-bg-main py-3 px-10 rounded-md flex items-center gap-2 border border-gray-500"
+    >
       <span class="material-icons">search</span>Search
     </button>
   </div>
 
   <div class="actions flex gap-7">
-    <button class="flex items-center p-3 px-5 bg-bg-container rounded-lg text-button-primary-bg font-bold
-                    hover:bg-button-primary-bg hover:text-text-primary hover:scale-95 transition duration-200 ease-in-out"
-    (click)="handleRegister()">Register
+    <button
+      class="flex items-center p-3 px-5 bg-bg-container rounded-lg text-button-primary-bg font-bold hover:bg-button-primary-bg hover:text-text-primary hover:scale-95 transition duration-200 ease-in-out"
+      (click)="handleRegister()"
+    >
+      Register
     </button>
-    <button class="flex items-center p-3 px-5 gap-2 bg-button-primary-bg rounded-md text-text-primary font-bold
-                    hover:bg-bg-container hover:text-button-primary-bg hover:scale-95 transition duration-200 ease-in-out"
-                    (click)="handleLogin()">
+    <button
+      class="flex items-center p-3 px-5 gap-2 bg-button-primary-bg rounded-md text-text-primary font-bold hover:bg-bg-container hover:text-button-primary-bg hover:scale-95 transition duration-200 ease-in-out"
+      (click)="handleLogin()"
+    >
       <span class="material-icons">input</span> Sign In
     </button>
   </div>
