@@ -5,17 +5,16 @@
 >
   <div class="absolute top-10 right-10 cursor-pointer">
     <a [routerLink]="['/home']">
-    <span
-      class="material-symbols-outlined hover:text-[var(--button-primary-bg)] transition-all duration-300 ease-in-out">
-      close_small
-    </span>
+      <span
+        class="material-symbols-outlined hover:text-[var(--button-primary-bg)] transition-all duration-300 ease-in-out"
+      >
+        close_small
+      </span>
     </a>
   </div>
   <div class="flex h-full">
     <!-- Left Side: Slideshow or Graphic -->
-    <div
-      class="hidden md:flex w-2/3 bg-cover bg-center relative"
-    >
+    <div class="hidden md:flex w-2/3 bg-cover bg-center relative">
       <!--      style="background-image: url('/assets/images/auth-bg.jpg')"-->
       <div class="absolute inset-0 bg-[var(--overlay-black)]">
         <img
@@ -54,41 +53,115 @@
         </button>
       </div>
 
-      <form class="flex flex-col gap-4" *ngIf="isLogin">
+      <form
+        class="flex flex-col gap-4"
+        *ngIf="isLogin"
+        [formGroup]="signinForm"
+        (ngSubmit)="onSignIn()"
+      >
         <input
-          type="email"
-          placeholder="Email"
+          type="text"
+          formControlName="username"
+          placeholder="Username"
           class="bg-transparent border border-gray-600 rounded-md px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--button-primary-bg)]"
         />
+        <ng-container
+          *ngIf="
+            signinForm.get('username')?.invalid &&
+            signinForm.get('username')?.touched
+          "
+        >
+          <span class="text-red-500 text-xs">Valid username is required</span>
+        </ng-container>
+
         <input
           type="password"
+          formControlName="password"
           placeholder="Password"
           class="bg-transparent border border-gray-600 rounded-md px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--button-primary-bg)]"
         />
+        <ng-container
+          *ngIf="
+            signinForm.get('password')?.invalid &&
+            signinForm.get('password')?.touched
+          "
+        >
+          <span
+            *ngIf="signinForm.get('password')?.errors?.['required']"
+            class="text-red-500 text-xs"
+            >Password is required</span
+          >
+          <span
+            *ngIf="signinForm.get('password')?.errors?.['minlength']"
+            class="text-red-500 text-xs"
+            >Password should have minimum 5 characters</span
+          >
+        </ng-container>
         <button
           type="submit"
+          (click)="(onSignIn)"
           class="mt-2 bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover)] transition-colors text-white py-3 rounded-md text-sm font-medium"
         >
           Login
         </button>
       </form>
 
-      <form class="flex flex-col gap-4" *ngIf="!isLogin">
+      <form
+        class="flex flex-col gap-4"
+        *ngIf="!isLogin"
+        [formGroup]="signupForm"
+        (ngSubmit)="onSignUp()"
+      >
         <input
           type="text"
           placeholder="Username"
+          formControlName="username"
           class="bg-transparent border border-gray-600 rounded-md px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--button-primary-bg)]"
         />
+        <ng-container
+          *ngIf="
+            signupForm.get('username')?.invalid &&
+            signupForm.get('username')?.touched
+          "
+        >
+          <span class="text-red-500 text-xs">Valid username is required</span>
+        </ng-container>
         <input
           type="email"
           placeholder="Email"
+          formControlName="email"
           class="bg-transparent border border-gray-600 rounded-md px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--button-primary-bg)]"
         />
+        <ng-container
+          *ngIf="
+            signupForm.get('email')?.invalid && signupForm.get('email')?.touched
+          "
+        >
+          <span class="text-red-500 text-xs">Valid email is required</span>
+        </ng-container>
         <input
           type="password"
           placeholder="Password"
+          formControlName="password"
           class="bg-transparent border border-gray-600 rounded-md px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--button-primary-bg)]"
         />
+        <ng-container
+          *ngIf="
+            signupForm.get('password')?.invalid &&
+            signupForm.get('password')?.touched
+          "
+        >
+          <span
+            *ngIf="signupForm.get('password')?.errors?.['required']"
+            class="text-red-500 text-xs"
+            >Password is required</span
+          >
+          <span
+            *ngIf="signupForm.get('password')?.errors?.['minlength']"
+            class="text-red-500 text-xs"
+            >Password should have minimum 5 characters</span
+          >
+        </ng-container>
         <div class="flex items-center gap-2 text-sm">
           <input
             type="checkbox"
@@ -96,9 +169,19 @@
             class="accent-[var(--button-primary-bg)]"
           />
           <label for="terms" class="text-[var(--text-muted)]"
-          >I agree to the terms and conditions</label
+            >I agree to the terms and conditions</label
           >
         </div>
+        <ng-container
+          *ngIf="
+            signupForm.get('acceptTerms')?.invalid &&
+            signupForm.get('acceptTerms')?.touched
+          "
+        >
+          <span class="text-red-500 text-xs"
+            >Terms and Conditions must be accepted.</span
+          >
+        </ng-container>
         <button
           type="submit"
           class="mt-2 bg-[var(--button-primary-bg)] hover:bg-[var(--button-primary-hover)] transition-colors text-white py-3 rounded-md text-sm font-medium"
