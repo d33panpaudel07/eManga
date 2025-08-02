@@ -7,7 +7,7 @@ import {
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { faker } from '@faker-js/faker';
-import { ɵEmptyOutletComponent } from "@angular/router";
+import {RouterLink, ɵEmptyOutletComponent} from "@angular/router";
 
 type menuType = {
   icon: string;
@@ -18,7 +18,7 @@ type menuType = {
 @Component({
   selector: 'app-side-bar',
   standalone: true,
-  imports: [CommonModule, ɵEmptyOutletComponent],
+  imports: [CommonModule, ɵEmptyOutletComponent, RouterLink],
   templateUrl: './side-bar.component.html',
   styleUrls: ['./side-bar.component.css'],
 })
@@ -39,26 +39,16 @@ export class SideBarComponent implements OnChanges, OnInit {
       {
         icon: 'home',
         title: 'Home',
-        url: faker.image.url(),
+        url: '/home',
       },
       {
         icon: 'search',
         title: 'Search',
-        url: faker.image.url(),
+        url: '/browse',
       },
       {
         icon: 'info',
         title: 'About us',
-        url: faker.image.url(),
-      },
-      {
-        icon: 'home',
-        title: faker.company.name(),
-        url: faker.image.url(),
-      },
-      {
-        icon: 'home',
-        title: faker.company.name(),
         url: faker.image.url(),
       },
     ];
