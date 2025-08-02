@@ -1,106 +1,22 @@
-<!--V1-->
-<!--&lt;!&ndash; login-register.component.html &ndash;&gt;-->
-<!--<section class="min-h-screen flex items-center justify-center bg-[var(&#45;&#45;bg-main)] text-[var(&#45;&#45;text-primary)] px-4">-->
-<!--  <div class="w-full max-w-md bg-[var(&#45;&#45;bg-container)] p-8 rounded-2xl shadow-md">-->
-<!--    <div class="flex justify-center mb-6">-->
-<!--      <button-->
-<!--        class="px-4 py-2 text-sm font-medium rounded-md"-->
-<!--        [ngClass]="isLogin ? 'text-[var(&#45;&#45;text-muted)]' : 'text-white border-b-2 border-[var(&#45;&#45;button-primary-bg)]'"-->
-<!--        (click)="isLogin = false"-->
-<!--      >-->
-<!--        Register-->
-<!--      </button>-->
-<!--      <button-->
-<!--        class="ml-6 px-4 py-2 text-sm font-medium rounded-md"-->
-<!--        [ngClass]="isLogin ? 'text-white border-b-2 border-[var(&#45;&#45;button-primary-bg)]' : 'text-[var(&#45;&#45;text-muted)]'"-->
-<!--        (click)="isLogin = true"-->
-<!--      >-->
-<!--        Login-->
-<!--      </button>-->
-<!--    </div>-->
-
-<!--    <form class="flex flex-col gap-4" *ngIf="isLogin">-->
-<!--      <input type="email" placeholder="Email" class="bg-transparent border border-gray-600 rounded-md px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[var(&#45;&#45;button-primary-bg)]" />-->
-<!--      <input type="password" placeholder="Password" class="bg-transparent border border-gray-600 rounded-md px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[var(&#45;&#45;button-primary-bg)]" />-->
-<!--      <button type="submit" class="mt-2 bg-[var(&#45;&#45;button-primary-bg)] hover:bg-[var(&#45;&#45;button-primary-hover)] transition-colors text-white py-3 rounded-md text-sm font-medium">Login</button>-->
-<!--    </form>-->
-
-<!--    <form class="flex flex-col gap-4" *ngIf="!isLogin">-->
-<!--      <input type="text" placeholder="Full Name" class="bg-transparent border border-gray-600 rounded-md px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[var(&#45;&#45;button-primary-bg)]" />-->
-<!--      <input type="email" placeholder="Email" class="bg-transparent border border-gray-600 rounded-md px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[var(&#45;&#45;button-primary-bg)]" />-->
-<!--      <input type="password" placeholder="Password" class="bg-transparent border border-gray-600 rounded-md px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[var(&#45;&#45;button-primary-bg)]" />-->
-<!--      <div class="flex items-center gap-2 text-sm">-->
-<!--        <input type="checkbox" id="terms" class="accent-[var(&#45;&#45;button-primary-bg)]" />-->
-<!--        <label for="terms" class="text-[var(&#45;&#45;text-muted)]">I agree to the terms and conditions</label>-->
-<!--      </div>-->
-<!--      <button type="submit" class="mt-2 bg-[var(&#45;&#45;button-primary-bg)] hover:bg-[var(&#45;&#45;button-primary-hover)] transition-colors text-white py-3 rounded-md text-sm font-medium">Register</button>-->
-<!--    </form>-->
-<!--  </div>-->
-<!--</section>-->
-
-<!--V2-->
-<!--&lt;!&ndash; login-register.component.html &ndash;&gt;-->
-<!--<section class="min-h-screen flex items-center justify-center bg-[var(&#45;&#45;bg-main)] text-[var(&#45;&#45;text-primary)] px-4">-->
-<!--  <div class="flex flex-col md:flex-row w-full max-w-5xl bg-[var(&#45;&#45;bg-container)] rounded-2xl shadow-lg overflow-hidden">-->
-<!--    &lt;!&ndash; Left Side: Form &ndash;&gt;-->
-<!--    <div class="w-full md:w-1/2 p-8 md:p-12">-->
-<!--      <div class="flex justify-center mb-6">-->
-<!--        <button-->
-<!--          class="px-4 py-2 text-sm font-medium rounded-md"-->
-<!--          [ngClass]="isLogin ? 'text-[var(&#45;&#45;text-muted)]' : 'text-white border-b-2 border-[var(&#45;&#45;button-primary-bg)]'"-->
-<!--          (click)="isLogin = false"-->
-<!--        >-->
-<!--          Register-->
-<!--        </button>-->
-<!--        <button-->
-<!--          class="ml-6 px-4 py-2 text-sm font-medium rounded-md"-->
-<!--          [ngClass]="isLogin ? 'text-white border-b-2 border-[var(&#45;&#45;button-primary-bg)]' : 'text-[var(&#45;&#45;text-muted)]'"-->
-<!--          (click)="isLogin = true"-->
-<!--        >-->
-<!--          Login-->
-<!--        </button>-->
-<!--      </div>-->
-
-<!--      <form class="flex flex-col gap-4" *ngIf="isLogin">-->
-<!--        <input type="email" placeholder="Email" class="bg-transparent border border-gray-600 rounded-md px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[var(&#45;&#45;button-primary-bg)]" />-->
-<!--        <input type="password" placeholder="Password" class="bg-transparent border border-gray-600 rounded-md px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[var(&#45;&#45;button-primary-bg)]" />-->
-<!--        <button type="submit" class="mt-2 bg-[var(&#45;&#45;button-primary-bg)] hover:bg-[var(&#45;&#45;button-primary-hover)] transition-colors text-white py-3 rounded-md text-sm font-medium">Login</button>-->
-<!--      </form>-->
-
-<!--      <form class="flex flex-col gap-4" *ngIf="!isLogin">-->
-<!--        <input type="text" placeholder="Full Name" class="bg-transparent border border-gray-600 rounded-md px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[var(&#45;&#45;button-primary-bg)]" />-->
-<!--        <input type="email" placeholder="Email" class="bg-transparent border border-gray-600 rounded-md px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[var(&#45;&#45;button-primary-bg)]" />-->
-<!--        <input type="password" placeholder="Password" class="bg-transparent border border-gray-600 rounded-md px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[var(&#45;&#45;button-primary-bg)]" />-->
-<!--        <div class="flex items-center gap-2 text-sm">-->
-<!--          <input type="checkbox" id="terms" class="accent-[var(&#45;&#45;button-primary-bg)]" />-->
-<!--          <label for="terms" class="text-[var(&#45;&#45;text-muted)]">I agree to the terms and conditions</label>-->
-<!--        </div>-->
-<!--        <button type="submit" class="mt-2 bg-[var(&#45;&#45;button-primary-bg)] hover:bg-[var(&#45;&#45;button-primary-hover)] transition-colors text-white py-3 rounded-md text-sm font-medium">Register</button>-->
-<!--      </form>-->
-<!--    </div>-->
-
-<!--    &lt;!&ndash; Right Side: Slideshow or Graphic &ndash;&gt;-->
-<!--    <div class="hidden md:block md:w-1/2 bg-cover bg-center relative" style="background-image: url('/assets/images/auth-bg.jpg')">-->
-<!--      &lt;!&ndash; Optional overlay or content &ndash;&gt;-->
-<!--      <div class="absolute inset-0 bg-[var(&#45;&#45;overlay-black)]"></div>-->
-<!--      <div class="relative z-10 flex items-center justify-center h-full px-8 text-center">-->
-<!--        <h2 class="text-xl md:text-3xl font-semibold text-white leading-tight">Welcome to Our Platform</h2>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</section>-->
-
 <!--V3-->
 <!-- login-register.component.html -->
 <section
   class="w-screen h-screen bg-[var(--bg-main)] text-[var(--text-primary)]"
 >
+  <div class="absolute top-10 right-10 cursor-pointer">
+    <a [routerLink]="['/home']">
+    <span
+      class="material-symbols-outlined hover:text-[var(--button-primary-bg)] transition-all duration-300 ease-in-out">
+      close_small
+    </span>
+    </a>
+  </div>
   <div class="flex h-full">
     <!-- Left Side: Slideshow or Graphic -->
     <div
       class="hidden md:flex w-2/3 bg-cover bg-center relative"
-      style="background-image: url('/assets/images/auth-bg.jpg')"
     >
+      <!--      style="background-image: url('/assets/images/auth-bg.jpg')"-->
       <div class="absolute inset-0 bg-[var(--overlay-black)]">
         <img
           class="h-full w-full object-center object-cover"
@@ -160,7 +76,7 @@
       <form class="flex flex-col gap-4" *ngIf="!isLogin">
         <input
           type="text"
-          placeholder="Full Name"
+          placeholder="Username"
           class="bg-transparent border border-gray-600 rounded-md px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--button-primary-bg)]"
         />
         <input
@@ -180,7 +96,7 @@
             class="accent-[var(--button-primary-bg)]"
           />
           <label for="terms" class="text-[var(--text-muted)]"
-            >I agree to the terms and conditions</label
+          >I agree to the terms and conditions</label
           >
         </div>
         <button
